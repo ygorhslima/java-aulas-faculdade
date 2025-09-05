@@ -47,14 +47,21 @@ public class Livro{
         System.out.println("Vendendo livro");
     }
 
-    public void mostrarDados(){
-        System.out.println("-------------------------------------------------");
-        System.out.println("titulo: " + this.titulo);
-        System.out.println("Autor: " + this.autor);
-        System.out.println("categoria: " + this.categoria);
-        System.out.println("quant_páginas: " + this.quant_paginas);
-        System.out.println("Código: " + this.isbn);
-        System.out.println("-------------------------------------------------");
+    public void alterarPreco(double novopreco){
+        this.preco = novopreco;
+        System.out.println("O valor do livro foi alterado para: " + novopreco);
     }
 
+    public void receberDesconto(int desconto){
+        this.preco = this.preco - (this.preco * desconto / 100);
+        System.out.println("o valor do livro com desconto é: " + this.preco);
+    }
+
+    public String mostrarDadosLivro(){
+        return ("\nTitulo: " + this.titulo +
+                "\nAutor: " + this.autor +
+                "\nCategoria: " + this.categoria + 
+                "\nQuantidade de páginas: " + this.quant_paginas +
+                "\nCódigo: " + this.isbn);
+    }
 }
